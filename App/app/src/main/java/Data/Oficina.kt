@@ -1,3 +1,9 @@
 package Data
 
-data class Oficina (val nome: String,val endereco:String,val fone:String)
+import com.fasterxml.jackson.annotation.JsonProperty
+
+
+data class Oficina (@JsonProperty("nome") val nome: String,
+                    @JsonProperty("endereco") val endereco:String,
+                    @JsonProperty("fone") val fone:String,
+                    @JsonProperty("promocao") val promocao:String)

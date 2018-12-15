@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">DrCarango</string>
+    <string name="login">Login</string>
+    <string name="senha">Senha</string>
+    <string name="email">Email</string>
+    <string name="_123456">123456</string>
+    <string name="a_a_com">a@a.com</string>
+</resources>

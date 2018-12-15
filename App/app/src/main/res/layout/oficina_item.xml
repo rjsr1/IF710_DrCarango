@@ -1,18 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:context="br.com.tsouto.mvvmkotlinbreedsample.BreedsActivity">
-
-    <data>
-        <variable
-            name="oficina"
-            type="Data.Oficina" />
-    </data>
-
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+ <TextView
+     android:id="@+id/tv_nome_oficina"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     />
     <TextView
+        android:id="@+id/tv_endereco_oficina"
         android:layout_width="match_parent"
-        android:text="@{oficina.nome}"
-        android:gravity="center_vertical"
-        android:layout_height="48dp"/>
-</layout>
+        android:layout_height="wrap_content"
+        />
+    <TextView
+        android:id="@+id/tv_fone_oficina"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        />
+    <TextView
+        android:id="@+id/tv_promocao_oficina"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+</LinearLayout>
