@@ -1,17 +1,23 @@
-package ListaOficinas
+package com.example.pichau.drcarango.ListaOficinas
 
-import Data.Oficina
+import com.example.pichau.drcarango.Data.Oficina
 import android.content.Context
 import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.RecyclerView.Adapter
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.OnClickListener
 import android.view.ViewGroup
 import com.example.pichau.drcarango.R
 import kotlinx.android.synthetic.main.oficina_item.view.*
 
-class OficinaListAdapter(private val oficinasList:List<Oficina>,private val context: Context): Adapter<OficinaListAdapter.ViewHolder>(){
+class OficinaListAdapter(private val oficinasList:List<Oficina>,private val context: Context,private val mItemListClickListener:onItemClickListener): Adapter<OficinaListAdapter.ViewHolder>(){
+
+
+    interface onItemClickListener{
+        fun onItemClickListener(V:View,pos:Int)
+    }
 
     var oficinas:List<Oficina> = emptyList()
 
@@ -20,9 +26,11 @@ class OficinaListAdapter(private val oficinasList:List<Oficina>,private val cont
         oficinas = novasOficinas
         notifyDataSetChanged()
     }
+
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(context).inflate(R.layout.oficina_item,parent,false)
-        return ViewHolder(view)
+        return ViewHolder(view,mItemListClickListener)
 
     }
 
@@ -31,6 +39,7 @@ class OficinaListAdapter(private val oficinasList:List<Oficina>,private val cont
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+
         val oficina = oficinas.get(position)
         Log.d("Adapter","bind de oficina para posicao " + position)
         holder.nome.setText(oficina.nome)
@@ -40,7 +49,20 @@ class OficinaListAdapter(private val oficinasList:List<Oficina>,private val cont
     }
 
 
-    class ViewHolder(itemView: View):RecyclerView.ViewHolder(itemView){
+    class ViewHolder(itemView: View,clickListener: onItemClickListener):RecyclerView.ViewHolder(itemView), OnClickListener{
+        val clickListener=clickListener
+        var mItemView = itemView
+
+        init {
+            mItemView.setOnClickListener(this)
+        }
+
+
+
+        override fun onClick(v: View?) {
+           clickListener.onItemClickListener(mItemView,adapterPosition)
+        }
+
         val nome = itemView.tv_nome_oficina
         val endereco = itemView.tv_endereco_oficina
         val fone = itemView.tv_fone_oficina

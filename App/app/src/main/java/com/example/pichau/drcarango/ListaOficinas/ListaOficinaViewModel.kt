@@ -1,8 +1,7 @@
-package ListaOficinas
+package com.example.pichau.drcarango.ListaOficinas
 
-import Data.Oficina
-import Repository.OficinasRepository
-import Services.RestAPIWebService
+import com.example.pichau.drcarango.Data.Oficina
+import com.example.pichau.drcarango.Services.RestAPIWebService
 import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.ViewModel

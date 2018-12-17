@@ -1,12 +1,10 @@
 package Repository
 
-import Data.Oficina
-import Services.RestAPIWebService
+import com.example.pichau.drcarango.Data.Oficina
+import com.example.pichau.drcarango.Services.RestAPIWebService
 import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.MutableLiveData
 import android.util.Log
-import dagger.Component
-import org.jetbrains.anko.doAsync
 import retrofit2.Call
 import retrofit2.Response
 import retrofit2.Callback
