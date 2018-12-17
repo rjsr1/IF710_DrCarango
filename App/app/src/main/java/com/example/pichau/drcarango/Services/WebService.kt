@@ -1,5 +1,6 @@
 package com.example.pichau.drcarango.Services
 
+import com.example.pichau.drcarango.Data.Comentario
 import com.example.pichau.drcarango.Data.Oficina
 import com.example.pichau.drcarango.Data.Usuario
 import com.example.pichau.drcarango.Data.UsuarioDTORequest
@@ -13,6 +14,8 @@ import retrofit2.http.Path
 
 interface RestAPIWebService{
 
+    @GET(value="oficina/{id}/comentarios")
+    fun getComentarios(@Path("id") id:Int):Call<List<Comentario>>
 
     @GET("/oficina/{id}")
     fun getOficina(@Path("id") id:Int):Call<Oficina>

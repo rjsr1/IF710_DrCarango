@@ -46,16 +46,8 @@ class SignInActivity : AppCompatActivity(),View.OnClickListener{
             val intent = Intent(this,ListaOficinasActivity::class.java)
             startActivity(intent)
         }
-        val successLogin = Observer<Boolean>{success->
-            if(success!!){
-                Log.d("ViewModel","sucesso login")
-                mProgressBar.visibility=View.GONE
-                val intent = Intent(this,ListaOficinasActivity::class.java)
-                startActivity(intent)
-            }
-        }
         model.usuario.observe(this,UsuarioObserver)
-        //model.successLogin.observe(this,successLogin)
+
 
     }
 }

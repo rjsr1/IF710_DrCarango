@@ -10,9 +10,9 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class ListaOficinasViewModel:ViewModel(){
+class ListaOficinasViewModel : ViewModel() {
 
-    val webService:RestAPIWebService by lazy{
+    val webService: RestAPIWebService by lazy {
         RestAPIWebService.create()
     }
 
@@ -21,24 +21,24 @@ class ListaOficinasViewModel:ViewModel(){
     //var repoListOficinas: OficinasRepository()
 
 
-    fun getOficinas(): LiveData<List<Oficina>>{
-        if(!::oficinas.isInitialized){
+    fun getOficinas(): LiveData<List<Oficina>> {
+        if (!::oficinas.isInitialized) {
             oficinas = MutableLiveData()
             loadOficinas()
         }
         return oficinas
     }
-    private fun loadOficinas(){
+
+    private fun loadOficinas() {
         //Usar Depois o Repository
-        webService.getOficinas("1").enqueue(object: Callback<List<Oficina>> {
+        webService.getOficinas("1").enqueue(object : Callback<List<Oficina>> {
             override fun onFailure(call: Call<List<Oficina>>, t: Throwable) {
-                Log.e("error","erro consulta webservice. Mensagem : "+t.message + "StackTrace : "+t.stackTrace)
+                Log.e("error", "erro consulta webservice. Mensagem : " + t.message + "StackTrace : " + t.stackTrace)
             }
 
             override fun onResponse(call: Call<List<Oficina>>, response: Response<List<Oficina>>) {
-                Log.d("debug","resposta" + response.toString())
-                oficinas.value=response.body()
-                Log.d("debug",oficinas.value!!.get(0).endereco)
+                oficinas.value = response.body()
+
             }
 
         })
