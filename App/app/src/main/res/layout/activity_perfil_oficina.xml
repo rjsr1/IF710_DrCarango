@@ -82,8 +82,8 @@
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/rv_comentarios_oficina"
-            android:layout_width="290dp"
-            android:layout_height="476dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
@@ -96,13 +96,11 @@
             style="@android:style/Widget.DeviceDefault.Light.Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="8dp"
             android:background="@android:color/holo_blue_light"
             android:text="Avaliar"
             android:textColor="@android:color/background_light"
-            app:layout_constraintEnd_toStartOf="@+id/tv_promocao_oficina"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_promocao_oficina" />
 
@@ -117,7 +115,6 @@
             android:text="Ver no Mapa"
             android:textColor="@android:color/background_light"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/tv_promocao_oficina"
             app:layout_constraintTop_toBottomOf="@+id/tv_promocao_oficina" />
     </android.support.constraint.ConstraintLayout>
 </FrameLayout>

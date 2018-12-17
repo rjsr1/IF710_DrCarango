@@ -43,6 +43,9 @@ class OficinaListAdapter(private val oficinasList: List<Oficina>, private val co
         holder.endereco.setText(oficina.endereco)
         holder.fone.setText(oficina.fone)
         holder.promocao.setText(oficina.promocao)
+        if(oficina.promocao==""){
+            holder.promocao.visibility=View.GONE
+        }
     }
 
 

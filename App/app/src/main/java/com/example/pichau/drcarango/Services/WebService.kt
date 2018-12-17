@@ -14,6 +14,9 @@ import retrofit2.http.Path
 
 interface RestAPIWebService{
 
+    @POST(value="usuario/cadastro")
+    fun cadastrarUsuario(@Body usuario:UsuarioDTORequest):Call<Void>
+
     @GET(value="oficina/{id}/comentarios")
     fun getComentarios(@Path("id") id:Int):Call<List<Comentario>>
 
