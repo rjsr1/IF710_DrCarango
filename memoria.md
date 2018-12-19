@@ -1,0 +1,1 @@
+o consumo de memória fica no máximo em 50MB. O uso de imagens com menor resolução devem diminuir essa consumo.
