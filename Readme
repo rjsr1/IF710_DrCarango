@@ -1,0 +1,1 @@
+Aplicativo para busca de oficinas mecanicas. Permite ao usuario ver comentarios de outros usuario, notas e promocoes oferecidas pelas oficinas. Tambem permite ao usuario ver a localizacao no mapa de uma dada oficina.
